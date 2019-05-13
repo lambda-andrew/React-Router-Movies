@@ -1,5 +1,8 @@
+// Commented portions are from original MVP
+// Kept in case things break and I decide to go back to MVP
 import React, { Component } from 'react';
 import axios from 'axios';
+import MovieCard from './MovieCard';
 
 export default class Movie extends Component {
   constructor(props) {
@@ -26,11 +29,11 @@ export default class Movie extends Component {
       });
   };
   // Uncomment this code when you're ready for the stretch problems
-  // componentWillReceiveProps(newProps){
-  //   if(this.props.match.params.id !== newProps.match.params.id){
-  //     this.fetchMovie(newProps.match.params.id);
-  //   }
-  // }
+  componentWillReceiveProps(newProps){
+    if(this.props.match.params.id !== newProps.match.params.id){
+      this.fetchMovie(newProps.match.params.id);
+    }
+  }
 
   // saveMovie = () => {
   //   const addToSavedList = this.props.addToSavedList;
@@ -41,28 +44,31 @@ export default class Movie extends Component {
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
     }
+    else {
+      return <MovieCard movieCardProps={this.state.movie}/>
+    }
 
-    const { title, director, metascore, stars } = this.state.movie;
-    return (
-      <div className="save-wrapper">
-        <div className="movie-card">
-          <h2>{title}</h2>
-          <div className="movie-director">
-            Director: <em>{director}</em>
-          </div>
-          <div className="movie-metascore">
-            Metascore: <strong>{metascore}</strong>
-          </div>
-          <h3>Actors</h3>
+    // const { title, director, metascore, stars } = this.state.movie;
+    // return (
+    //   <div className="save-wrapper">
+    //     <div className="movie-card">
+    //       <h2>{title}</h2>
+    //       <div className="movie-director">
+    //         Director: <em>{director}</em>
+    //       </div>
+    //       <div className="movie-metascore">
+    //         Metascore: <strong>{metascore}</strong>
+    //       </div>
+    //       <h3>Actors</h3>
 
-          {stars.map(star => (
-            <div key={star} className="movie-star">
-              {star}
-            </div>
-          ))}
-        </div>
-        <div className="save-button">Save</div>
-      </div>
-    );
+    //       {stars.map(star => (
+    //         <div key={star} className="movie-star">
+    //           {star}
+    //         </div>
+    //       ))}
+    //     </div>
+    //     <div className="save-button">Save</div>
+    //   </div>
+    // );
   }
 }
