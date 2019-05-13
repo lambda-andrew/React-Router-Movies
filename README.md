@@ -9,7 +9,7 @@ Topics:
 
 ## Instructions
 
-* **Fork** this repository, then clone your fork.
+* **CLONE** this repository, don't fork.
 * **NOTE** You have 2 servers that you will be running here so read these instructions carefully.
 * **In the root of this directory**: Run `yarn install` to download dependencies.
 * Run the server using `yarn start` or `node server.js`. (Don't worry too much about this process, you'll get used to doing this and it will be explained more in the future).
