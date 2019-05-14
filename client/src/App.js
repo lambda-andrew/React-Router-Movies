@@ -1,5 +1,4 @@
-// Commented portions are from original MVP
-// Kept in case things break and I decide to go back to MVP
+
 import React, { Component } from 'react';
 import {Route} from 'react-router-dom';
 import SavedList from './Movies/SavedList';

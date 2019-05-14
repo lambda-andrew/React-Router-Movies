@@ -4,6 +4,19 @@ body {
   font-family: sans-serif;
   background-color: #f2f2f2;
 }
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.active-movie {
+  background: lightblue;
+  padding: 5px 10px;
+}
+.active-movie:hover {
+  background: blue;
+  color: white;
+}
 
 .movie-card {
   background-color: #fff;
@@ -69,4 +82,9 @@ body {
 .home-button {
   padding: 5px 10px;
   background-color: lightskyblue;
+}
+
+.home-button:hover {
+  background-color: blue;
+  color: white;
 }
